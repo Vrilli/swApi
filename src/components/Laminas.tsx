@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useSwapiData from '../useSwapiData';
+import { Link } from 'react-router-dom';
 
 interface SwapiItem {
     name: string;
@@ -17,7 +18,7 @@ const Laminas: React.FC = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTimes(times.map(time=> (time > 0 ? time - 1 : 0)));
+            setTimes(times.map(time => (time > 0 ? time - 1 : 0)));
         }, 1000);
 
         return () => clearInterval(interval);
@@ -95,8 +96,13 @@ const Laminas: React.FC = () => {
 
     return (
         <div className="p-6">
-            <h1 className="text-2xl font-bold mb-4">Obtener Láminas</h1>
-            <div className="flex space-x-4">
+            <div className='flex justify-between items-center'>
+                <h1 className="text-2xl font-bold mb-4">Obtener Láminas</h1>
+                <Link to="/home" className='text-xl font-bold hover:bg-gray-300 p-3'>Volver al Home</Link>
+                <button className='text-xl font-bold hover:bg-gray-300 p-3'><Link to="/">Cerrar Sesion</Link></button>
+            </div>
+
+            <div className="flex space-x-4 justify-center items-center pt-40">
                 {packs.map((pack, index) => (
                     <div key={index} className="relative">
                         <button

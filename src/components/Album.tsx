@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useSwapiData from '../useSwapiData';
+import { Link } from 'react-router-dom';
 
 
 const MiAlbum: React.FC = () => {
@@ -41,7 +42,12 @@ const MiAlbum: React.FC = () => {
 
     return (
         <div className="p-6">
+            <div className='flex justify-between items-center'>
             <h1 className="text-2xl font-bold mb-4">Mi Álbum</h1>
+            <Link to="/home" className='text-xl font-bold hover:bg-gray-300 p-3'>Volver al Home</Link>
+            <button className='text-xl font-bold hover:bg-gray-300 p-3'><Link to="/">Cerrar Sesion</Link></button>
+            </div>
+            
             {renderSection(data.films, 'Películas')}
             {renderSection(data.characters, 'Personajes')}
             {renderSection(data.starships, 'Naves')}

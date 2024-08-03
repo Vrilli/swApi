@@ -8,6 +8,7 @@ const Menu: React.FC = () => {
                 <li><Link to="/get-stickers" className=' hover:bg-gray-300 p-3'>Láminas</Link></li>
                 <li> <Link to="/my-album"  className=' hover:bg-gray-300 p-3'>Álbum</Link></li>
             </ul>
+            <button className='text-xl font-bold hover:bg-gray-300 p-3'><Link to="/">Cerrar Sesion</Link></button>
         </nav>
     );
 };
